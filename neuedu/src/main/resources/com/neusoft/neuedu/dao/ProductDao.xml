@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.neuedu.dao.ProductDao">
+	
+	<sql id="fields">
+	   id,category_id,name,subtitle,main_image mainImage,
+	   sub_images subImages,detail,price,stock,status,is_new isNew,
+	   is_hot isHot,is_banner isBanner,create_time createTime,update_time updateTime
+	</sql>
+	<select id="queryAllPro" resultType="product">
+	   SELECT <include refid="fields"/>
+	   FROM neuedu_product ORDER BY update_time DESC
+	</select>
+</mapper>
